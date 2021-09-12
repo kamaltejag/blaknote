@@ -1,0 +1,22 @@
+a{
+    color: #fff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #000;
+    background-color: #ffc107;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #ffc107;
+}
+
+#pills-tabContent{
+    min-height: 70vh;
+}
+
+.list-content{
+    max-height: 70vh;
+    overflow: auto;
+    scrollbar-width: none;
+}

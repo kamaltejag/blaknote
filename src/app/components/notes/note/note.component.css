@@ -1,0 +1,9 @@
+.note-list{
+    background-color: #3e3e3e;
+    border: 2px transparent solid;
+    border-radius: 0.5rem;
+}
+.note-list:hover{
+    background-color: transparent;
+    border: 2px solid #ffc1077a;
+}

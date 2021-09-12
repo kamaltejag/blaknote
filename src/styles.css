@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+a{
+    color: #fff;
+}
+
+fa-icon{
+    color: #6c757d;
+} 
+fa-icon:hover{
+    color: #ffc107 !important;
+}   

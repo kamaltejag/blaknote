@@ -1,0 +1,18 @@
+<div class="container d-flex align-items-center justify-content-around py-3">
+    <div></div>
+    <div class="dropup">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <fa-icon [icon]="faPlus" class="text-warning border border-warning border-2 px-2 py-1 rounded-circle"
+                style="font-size: 1.5rem;"></fa-icon>
+        </a>
+    
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-center" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#" [routerLink]="['/create', 'note']">Note</a></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['/createedit', 'todo']">Todo</a></li>
+        </ul>
+    </div>
+    <a href="" [routerLink]="['']">
+        <fa-icon [icon]="faSignOutAlt" style="font-size: 1.5rem;"></fa-icon>
+    </a>
+</div>
