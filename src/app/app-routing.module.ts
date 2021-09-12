@@ -26,18 +26,27 @@ const routes: Routes = [
         component: NotesListComponent,
       },
       {
-        path: "notes/:id",
-        component: NoteShowComponent
-      },
-      {
         path: "todos",
         component: TodosListComponent
       }
     ]
   },
   {
-    path: "create/note",
-    component: NoteCreateEditComponent
+    path: "note",
+    children: [
+      {
+        path: "create",
+        component: NoteCreateEditComponent
+      },
+      {
+        path: "edit/:id",
+        component: NoteCreateEditComponent
+      },
+      {
+        path: ":id",
+        component: NoteShowComponent
+      }
+    ]
   }
 ];
 

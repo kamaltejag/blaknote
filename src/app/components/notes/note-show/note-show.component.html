@@ -1,4 +1,19 @@
-<div class="container note p-3">
-    <h1 class="text-center mb-3 fw-bold">{{ note?.title }}</h1>
-    <div markdown ngPreserveWhitespaces [data]="note?.content" >{{ note?.content }}</div>
+<app-header></app-header>
+
+<!-- Breadcrumb -->
+<div class="container my-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" [routerLink]="['/']">Home</a></li>
+            <li class="breadcrumb-item"><a href="" [routerLink]="['/list']">Notes</a></li>
+            <li class="breadcrumb-item active">Note - {{ note?.id }}</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container my-5">
+    <div class="note p-3">
+        <h1 class="text-center text-warning mb-3 fw-bold">{{ note?.title }}</h1>
+        <div markdown ngPreserveWhitespaces [data]="note?.content" >{{ note?.content }}</div>
+    </div>
 </div>

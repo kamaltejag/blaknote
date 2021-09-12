@@ -7,9 +7,7 @@
         <label>Content</label>
         <textarea name="content" required [(ngModel)]="content" class="mb-3" cols="30" rows="15"></textarea>
         <button type="submit" class="btn btn-warning">Create</button>
-
-        <input type="hidden" name="id", [(ngModel)="id"] *ngIf="note" value="{{ note?.id }}">
-    </form>    
+    </form>   
 </div>
 
 <app-footer></app-footer>

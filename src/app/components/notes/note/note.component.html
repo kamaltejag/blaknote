@@ -1,11 +1,12 @@
-<a href="#" [routerLink]="['./', note.id]" class="text-white text-decoration-none">
-    <div class="container note-list p-3 my-3">
-        <div>
+<div class="container note-list p-3 my-3 d-flex align-items-start justify-content-between">
+    <div>
+        <a href="#" [routerLink]="['/note/', note.id]" class="text-white text-decoration-none">
             <h3>{{ note.title }}</h3>
             <p class="text-muted">{{ note.content.substr(0, 50) }}</p>
-        </div>
-        <div>
-            <a href=""></a>
-        </div>
+        </a>
     </div>
-</a>
+    <div>
+        <a href="#" [routerLink]="['/note/edit', note.id]"><fa-icon [icon]="faEdit" style="font-size: 1.3rem;"></fa-icon></a>
+        <fa-icon [icon]="faTrash" class="ms-2" (click)="onDelete(note.id)" style="font-size: 1.3rem; cursor:pointer;"></fa-icon>
+    </div>
+</div>

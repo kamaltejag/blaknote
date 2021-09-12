@@ -18,9 +18,8 @@ export class NotesListComponent implements OnInit {
     this.noteService.getNotes().subscribe((notes) => this.notes = notes);
   }
 
-  addNote(event: Event){
-    console.log(event);
-    // this.noteService.addNote(newNote).subscribe(() => this.router.navigate(['/list/notes']));
+  deleteNote(id: number){
+    this.noteService.deleteNote(id).subscribe(() => this.notes = this.notes?.filter(note => note.id != id));
   }
 
 }

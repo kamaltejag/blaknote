@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from 'src/app/model/Note';
 import { NoteService } from 'src/app/services/note.service';
 
@@ -14,13 +14,12 @@ export class NoteCreateEditComponent implements OnInit {
   title: any;
   content: any;
 
-  @Output() onAddNote: EventEmitter<any> = new EventEmitter();
+  note?: any;
 
-  note?: Note;
-
-  constructor(private noteService: NoteService, private router: Router) { }
+  constructor(private noteService: NoteService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => this.noteService.getNote(params.id).subscribe((note) => this.note = note));
   }
 
   onAdd(){
@@ -29,7 +28,19 @@ export class NoteCreateEditComponent implements OnInit {
       content: this.content
     }
     
-    this.onAddNote.emit(newNote);
+    this.noteService.addNote(newNote).subscribe(() => this.router.navigate(['/list/notes']));
+  }
+
+  onUpdate(){
+    console.log("inside Update");
+  }
+
+  onSubmit(){
+    if(this.id){
+      console.log("id is there");
+    }else{
+      console.log("Nope");
+    }
   }
 
 }
